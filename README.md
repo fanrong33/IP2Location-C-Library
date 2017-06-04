@@ -57,8 +57,8 @@ php接口，使用shell_exec调用c模块
 
     /**
      * 使用ip2location c library模块进行ip查询
-     * TODO 未完善安全验证
-     */
+     * TODO 未完善安全验证，测试错误路径
+     */
     public function ip_query(){
         $ip = $_GET['ip'];
         if($ip == ''){
@@ -80,8 +80,8 @@ php接口，使用shell_exec调用c模块
             'mnc',
             'carrier',
             'usage_type',
-            // 'timezone'     => "",
-            // 'zip'          => "",
+            // 'timezone',
+            // 'zip',
         );
         if($result){
             $result = substr(trim($result), 1, -1);
