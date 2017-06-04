@@ -102,6 +102,9 @@ php接口，使用shell_exec调用c模块
         }
     }
 
+php api result
+
+    {"data":{"ip":"121.23.202.33","country_code":"CN","country":"China","region":"Zhejiang","city":"Hangzhou","lat":"30.293650","lon":"120.161423","domain":"aliyun.com","isp":"Aliyun Computing Co. Ltd","mcc":"","mnc":"","carrier":"","usage_type":"DCH","timezone":"","zip":""},"info":"success","status":1}
 
 # Sample BIN Databases
 * Download free IP2Location LITE databases at [http://lite.ip2location.com](http://lite.ip2location.com)  
