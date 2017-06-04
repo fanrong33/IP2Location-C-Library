@@ -49,7 +49,7 @@ For more details, please visit:
 
 测试
 
-    /usr/local/src/IP2Location-C-Library-master/sample 8.8.8.8
+    /usr/local/bin/ip2location 8.8.8.8
     "US","United States","California","Mountain View","37.405991","-122.078514","Google Inc.","google.com","-","-","-","SES"
 
 
