@@ -49,8 +49,8 @@ For more details, please visit:
     gcc -o ip2location ip2location.c -IIP2Location-C-Library-master/libIP2Location -LIP2Location-C-Library-master/libIP2Location/.libs -lIP2Location
 
 测试
-
-    /usr/local/bin/ip2location 8.8.8.8
+    
+    /usr/local/bin/ip2location 8.8.8.8
     "US","United States","California","Mountain View","37.405991","-122.078514","Google Inc.","google.com","-","-","-","SES"
 
 
