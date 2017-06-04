@@ -42,6 +42,7 @@ For more details, please visit:
     vi /etc/profile
     export LD_LIBRARY_PATH=/usr/local/bin/IP2Location-C-Library-master/libIP2Location/.libs:$LD_LIBRARY_PATH
     source /etc/profile
+    
 将ip2location.c 放在与IP2Location-C-Library-master/目录同级，编译第一个命令是示例，使用第二个命令进行编译
 
     gcc -o sample sample.c -I../libIP2Location -L../libIP2Location/.libs -lIP2Location
@@ -49,7 +50,7 @@ For more details, please visit:
 
 测试
 
-    /usr/local/bin/ip2location 8.8.8.8
+    /usr/local/bin/ip2location 8.8.8.8
     "US","United States","California","Mountain View","37.405991","-122.078514","Google Inc.","google.com","-","-","-","SES"
 
 
