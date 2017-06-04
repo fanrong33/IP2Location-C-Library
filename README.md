@@ -36,6 +36,18 @@ For more details, please visit:
     cd test
     test-IP2Location
 
+# Sample Code
+C Library安装路径/usr/local/bin/IP2Location-C-Library-master
+设置LD_LIBRARY_PATH环境变量
+    export LD_LIBRARY_PATH=/usr/local/bin/IP2Location-C-Library-master/libIP2Location/.libs:$LD_LIBRARY_PATH
+    vi /etc/profile
+    source /etc/profile
+将ip2location.c 放在与IP2Location-C-Library-master/目录同级，编译
+    gcc -o sample sample.c -I../libIP2Location -L../libIP2Location/.libs -lIP2Location
+    gcc -o ip2location ip2location.c -IIP2Location-C-Library-master/libIP2Location -LIP2Location-C-Library-master/libIP2Location/.libs -lIP2Location
+
+
+
 # Sample BIN Databases
 * Download free IP2Location LITE databases at [http://lite.ip2location.com](http://lite.ip2location.com)  
 * Download IP2Location sample databases at [http://www.ip2location.com/developers](http://www.ip2location.com/developers)
