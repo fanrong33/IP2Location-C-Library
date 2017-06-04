@@ -37,17 +37,20 @@ For more details, please visit:
     test-IP2Location
 
 # Sample Code
-C Library安装路径/usr/local/bin/IP2Location-C-Library-master
-设置LD_LIBRARY_PATH环境变量
+安装路径/usr/local/bin/IP2Location-C-Library-master，设置LD_LIBRARY_PATH环境变量
 
-    export LD_LIBRARY_PATH=/usr/local/bin/IP2Location-C-Library-master/libIP2Location/.libs:$LD_LIBRARY_PATH
     vi /etc/profile
+    export LD_LIBRARY_PATH=/usr/local/bin/IP2Location-C-Library-master/libIP2Location/.libs:$LD_LIBRARY_PATH
     source /etc/profile
-将ip2location.c 放在与IP2Location-C-Library-master/目录同级，编译
+将ip2location.c 放在与IP2Location-C-Library-master/目录同级，编译第一个命令是示例，使用第二个命令进行编译
 
     gcc -o sample sample.c -I../libIP2Location -L../libIP2Location/.libs -lIP2Location
     gcc -o ip2location ip2location.c -IIP2Location-C-Library-master/libIP2Location -LIP2Location-C-Library-master/libIP2Location/.libs -lIP2Location
 
+测试
+
+    /usr/local/src/IP2Location-C-Library-master/sample 8.8.8.8
+    "US","United States","California","Mountain View","37.405991","-122.078514","Google Inc.","google.com","-","-","-","SES"
 
 
 # Sample BIN Databases
