@@ -53,6 +53,55 @@ For more details, please visit:
     /usr/local/bin/ip2location 8.8.8.8
     "US","United States","California","Mountain View","37.405991","-122.078514","Google Inc.","google.com","-","-","-","SES"
 
+php接口，使用shell_exec调用c模块
+
+    /**
+     * 使用ip2location c library模块进行ip查询
+     * TODO 未完善安全验证
+     */
+    public function ip_query(){
+        $ip = $_GET['ip'];
+        if($ip == ''){
+            $this->ajaxReturn('', 'ip parameter is missing', 0);
+        }
+
+        $result = shell_exec("/usr/local/bin/ip2location $ip 2>&1");
+        $key_map = array(
+            'ip',
+            'country_code',
+            'country',
+            'region',
+            'city',
+            'lat',
+            'lon',
+            'domain',
+            'isp',
+            'mcc',
+            'mnc',
+            'carrier',
+            'usage_type',
+            // 'timezone'     => "",
+            // 'zip'          => "",
+        );
+        if($result){
+            $result = substr(trim($result), 1, -1);
+            $pieces = split('","', $result);
+            foreach ($pieces as $key => $value) {
+                $pieces[$key] = $value == '-' ? '' : $value;
+            }
+            array_unshift($pieces, $ip);
+
+
+            $data = array_combine($key_map, $pieces);
+            $data['timezone'] = '';
+            $data['zip']      = '';
+            
+            $this->ajaxReturn($data, 'success', 1);
+        }else{
+            $this->ajaxReturn(array(), 'fail', 0);
+        }
+    }
+
 
 # Sample BIN Databases
 * Download free IP2Location LITE databases at [http://lite.ip2location.com](http://lite.ip2location.com)  
