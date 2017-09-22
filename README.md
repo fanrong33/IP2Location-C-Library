@@ -47,11 +47,16 @@ For more details, please visit:
 
     gcc -o sample sample.c -I../libIP2Location -L../libIP2Location/.libs -lIP2Location
     gcc -o ip2location ip2location.c -IIP2Location-C-Library-master/libIP2Location -LIP2Location-C-Library-master/libIP2Location/.libs -lIP2Location
+    
+    gcc -o ip2location_ipv6 ip2location_ipv6.c -IIP2Location-C-Library-master/libIP2Location -LIP2Location-C-Library-master/libIP2Location/.libs -lIP2Location
 
 测试
     
     /usr/local/bin/ip2location 8.8.8.8
     "US","United States","California","Mountain View","37.405991","-122.078514","Google Inc.","google.com","-","-","-","SES"
+    /usr/local/bin/ip2location_ipv6 2600:1005:b12c:7c89:f962:5d91:7de7:c0b1
+    "US","United States","Georgia","Valdosta","30.832701","-83.278488","verizonwireless.com","Cellco Partnership DBA Verizon Wireless","310","004/005/006/012","Verizon","ISP/MOB"
+
 
 php接口，使用shell_exec调用c模块
 
