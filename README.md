@@ -71,7 +71,11 @@ php接口，使用shell_exec调用c模块
             $this->ajaxReturn('', 'ip parameter is missing', 0);
         }
 
-        $result = shell_exec("/usr/local/bin/ip2location $ip 2>&1");
+        if(strpos($ip, ':') === false){ // IPV4
+            $result = shell_exec("/usr/local/bin/ip2location $ip 2>&1");
+        }else{ // IPV6
+            $result = shell_exec("/usr/local/bin/ip2location_ipv6 $ip 2>&1");
+        }
         $key_map = array(
             'ip',
             'country_code',
