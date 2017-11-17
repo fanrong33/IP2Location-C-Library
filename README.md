@@ -116,6 +116,24 @@ php api result
 
     {"data":{"ip":"121.23.202.33","country_code":"CN","country":"China","region":"Zhejiang","city":"Hangzhou","lat":"30.293650","lon":"120.161423","domain":"aliyun.com","isp":"Aliyun Computing Co. Ltd","mcc":"","mnc":"","carrier":"","usage_type":"DCH","timezone":"","zip":""},"info":"success","status":1}
 
+# 错误情况
+有时候后台命令行执行可以，但是在PHP执行却出现以下错误
+    
+    /usr/local/bin/ip2location: error while loading shared libraries: libIP2Location.so.1: cannot open shared object file: No such file or directory
+
+经过搜索资料，发现部分linux系统存有的通病。要解决这个方法非常容易
+
+如果是32位系统
+
+    ln -s /usr/local/bin/IP2Location-C-Library/libIP2Location/.libs/libIP2Location.so.1 /lib
+
+如果是64位系统
+
+    ln -s /usr/local/bin/IP2Location-C-Library/libIP2Location/.libs/libIP2Location.so.1 /lib64
+
+
+
+
 # Sample BIN Databases
 * Download free IP2Location LITE databases at [http://lite.ip2location.com](http://lite.ip2location.com)  
 * Download IP2Location sample databases at [http://www.ip2location.com/developers](http://www.ip2location.com/developers)
