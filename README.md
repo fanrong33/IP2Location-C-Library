@@ -119,7 +119,8 @@ php api result
 # FAQ
 有时候后台命令行执行可以，但是在PHP执行却出现以下错误
     
-    /usr/local/bin/ip2location: error while loading shared libraries: libIP2Location.so.1: cannot open shared object file: No such file or directory
+    /usr/local/bin/ip2location: error while loading shared libraries: libIP2Location.so.1: cannot open shared object file: No such file or directory
+或者是php执行可以，但是通过cron来执行php中的代码却出现没有返回任何数据的bug
 
 经过搜索资料，发现部分linux系统存有的通病。要解决这个方法非常容易
 
