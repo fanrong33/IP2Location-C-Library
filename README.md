@@ -117,6 +117,13 @@ php api result
     {"data":{"ip":"121.23.202.33","country_code":"CN","country":"China","region":"Zhejiang","city":"Hangzhou","lat":"30.293650","lon":"120.161423","domain":"aliyun.com","isp":"Aliyun Computing Co. Ltd","mcc":"","mnc":"","carrier":"","usage_type":"DCH","timezone":"","zip":""},"info":"success","status":1}
 
 # FAQ
+
+AC_PROG_LIBTOOL错误
+    
+    # autoreconf -i -v --force
+    configure.ac:42: error: possibly undefined macro: AC_PROG_LIBTOOL
+    # yum install libtool
+
 有时候后台命令行执行可以，但是在PHP执行却出现以下错误
     
     /usr/local/bin/ip2location: error while loading shared libraries: libIP2Location.so.1: cannot open shared object file: No such file or directory
