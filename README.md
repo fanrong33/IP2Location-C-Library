@@ -118,15 +118,17 @@ php api result
 
 # FAQ
 
-AC_PROG_LIBTOOL错误
-    
-    # autoreconf -i -v --force
-    configure.ac:42: error: possibly undefined macro: AC_PROG_LIBTOOL
-    # yum install libtool
+1. AC_PROG_LIBTOOL错误
 
-有时候后台命令行执行可以，但是在PHP执行却出现以下错误
+```
+# autoreconf -i -v --force
+configure.ac:42: error: possibly undefined macro: AC_PROG_LIBTOOL
+# yum install libtool
+```
+
+2. 有时候后台命令行执行可以，但是在PHP执行却出现以下错误
     
-    /usr/local/bin/ip2location: error while loading shared libraries: libIP2Location.so.1: cannot open shared object file: No such file or directory
+/usr/local/bin/ip2location: error while loading shared libraries: libIP2Location.so.1: cannot open shared object file: No such file or directory
 
 或者是php执行可以，但是通过cron来执行php中的代码却出现没有返回任何数据的bug
 
